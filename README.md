@@ -1,4 +1,11 @@
 # OFYP-Analyse presence and proportion of gene flow between UK insects
+## split.sh
+To account for translocation, differences in genome positions etc., the chromosome copy of the second species is split before aligning it with the reference genome(chromosome copy of species 1). This can be done easily using split.sh
+```
+./split.sh species_prefix
+```
+Ensure relevant raw data files are in the same folder
+
 ## make_bedfiles.R
 This R script extracts start and end positions of regions with an alignment depth of 2(corresponding to each haplotype of the whole-genome alignment pipeline). Then, it overlaps the regions transitively to merge all the regions together. Finally, it checks which regions are present in the vcf file, and creates bed files based on the output. These bed files are required to run SINGER, the biotool used to generate Ancestral Recombination Graphs(ARGs). 
 
