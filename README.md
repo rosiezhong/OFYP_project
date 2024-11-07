@@ -16,5 +16,10 @@ Rscript make_bedfiles.R depth1.txt depth2.txt species.vcf bedfiles_directory
 Then, use the bedfiles to process individual vcfs
 ```
 count=$(find "Path/to/bedfiles_dir" -type f | wc -l)
-for INDEX in $(seq 1 "$count"); do bcftools view -Ov -R /bedfiles_dir/Species${INDEX}.bed Species.vcf.gz > indiv_vcf_dir/Species${INDEX}.vcf; done
+for INDEX in $(seq 1 "$count"); do bcftools view -Ov -R /bedfiles_dir/Species${INDEX}.bed Species.vcf.gz > /indiv_vcf_dir/Species${INDEX}.vcf; done
+```
+
+You can generate the depth files using the following command
+```
+samtools depth species1.bam > depth1.txt
 ```
