@@ -108,3 +108,28 @@ This can be found in this line, after the -m flag, set as default 2.9e-9. It was
 > WOR_DIR=
 
 An additional script needed to run this script is tree_type.py. This is the folder that this files is stored in. All additional scripts needed are provided in this repository.
+
+## Running simulations
+This study uses [msprime](https://tskit.dev/msprime/docs/stable/intro.html) to run simulations on Jupyter Notebook. The code used for the species Andrena is
+```
+%%capture
+twopopmodel = msprime.Demography()
+twopopmodel.add_population(name="A", initial_size=2356845.5)
+twopopmodel.add_population(name="B", initial_size=2356845.5)
+twopopmodel.add_population(name="C", initial_size=2356845.5)
+twopopmodel.add_population_split(time=5000_000, derived=["A", "B"], ancestral="C")
+twopopmodel.set_migration_rate(source='A', dest='B', rate=1.3e-7)
+Andrena_ts = msprime.sim_ancestry(
+    recombination_rate=6.8e-10,
+    sequence_length=1000_000,
+    samples={"A": 1, "B": 1},
+    demography=twopopmodel)
+Andrena_mts = msprime.sim_mutations(Andrena_ts, rate=3.4e-9)
+```
+The code can be reused for other species by adjusting parameter values. Simulated ancestries can then be used to generate a vcf file, as with Andrena
+```
+with open("/path/simulated.vcf", "w") as vcf_file:
+    Andrena_mts.write_vcf(vcf_file, allow_position_zero=True)
+```
+A modified varation of Template.singer.slurm can then be used to run this vcf file through the gene flow analysis pipeline.
+
