@@ -64,7 +64,7 @@ Please see how to create a virtual python environment using [Venv](https://docs.
 module load Python/3.9.6-GCCcore-11.2.0
 source <path_to_virtual_env>/bin/activate
 ```
-This script generates ARGs from vcf files using the bioinformatics tool SINGER. Please see how to install the tool on its [github page]("https://github.com/popgenmethods/SINGER"). We have only tested the beta 1.17 version.
+This script generates ARGs from vcf files using the bioinformatics tool [SINGER](https://github.com/popgenmethods/SINGER). Please see how to install the tool on its github page. We have only tested the beta 1.17 version.
 
 ### Using the script
 The script is designed to be run over different datasets with minimal editing. This script is designed for a SLURM scheduling system, so adjust accordingly. When running the script over a different species, only the following fields need to be edited(most fields are at the top of the script):
