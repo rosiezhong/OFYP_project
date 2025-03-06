@@ -1,5 +1,5 @@
 ## Data used
-The data used in this study were collected, sequenced and assembled by the darwin tree of life project, taken from [Darwin Tree of Life](https://pages.github.com/](https://www.darwintreeoflife.org/data/). Hence, all codes and analysis described are designed for whole-genome assembly data, such as the ones provided by the site.
+The data used in this study were collected, sequenced and assembled by the darwin tree of life project, taken from [Darwin Tree of Life](https://www.darwintreeoflife.org/data/). Hence, all codes and analysis described are designed for whole-genome assembly data, such as the ones provided by the site.
 
 ## Template.pipeline.slurm
 This template script is used to run through all the steps of pre-alignment processing, genome alignment, variant calling and further processing to prepare the files for gene flow analysis. The script has been optimised where possible. For reference genomes ~200Mb (using whole-genome input files), it takes roughly 5 days to complete. For reference genomes ~60Mb, it takes 1-2 days to complete. Smaller references genomes can be completed within a day.
