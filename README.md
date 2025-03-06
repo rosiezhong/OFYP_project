@@ -57,7 +57,7 @@ Additional scripts needed to run this script are split.sh, chr1.sh(if you are on
 This script randomly samples a specified _vcf_num_ number of vcf files for gene flow analysis. It constructs Ancestral Recombination Graphs(ARGs), converts them into tree sequence files, and then classifies them into corresponding tree categories.
 
 ### Dependencies
-A virtual python environment, containing the packages are required:<br/>
+A virtual python environment, containing the packages:<br/>
 numPY<br/>
 tskit/0.60<br/>
 Please see how to create a virtual python environment using [Venv](https://docs.python.org/3/library/venv.html). Remember to add the command to activate it in the script:
