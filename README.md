@@ -107,7 +107,7 @@ This can be found in this line, after the -m flag, set as default 2.9e-9. It was
 
 > WOR_DIR=
 
-An additional script needed to run this script is tree_type.py. This is the folder that this files is stored in. All additional scripts needed are provided in this repository.
+An additional script needed to run this script is tree_type.py. This is the folder that this files is stored in. All additional scripts needed are provided in this repository. tree_type.py was written by Tymek Pieszko
 
 ## Running simulations
 This study uses [msprime](https://tskit.dev/msprime/docs/stable/intro.html) to run simulations on Jupyter Notebook. The code used for the species Andrena is
