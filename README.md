@@ -1,4 +1,4 @@
-This is the code written for my OFYP project, <ins>Gene flow analysis using high-quality genome assemblies reveals porous species boundaries between UK insect sister-species</ins>. The workflow is optimized for high-quality genome assemblies that applies Ancestral Recombination Graphs (ARGs) to detect gene flow.
+This is the code written for my OFYP project, <ins>Gene flow analysis using high-quality genome assemblies reveals porosity of species boundaries between UK insect sister-species</ins>. The workflow is optimized for high-quality genome assemblies that applies Ancestral Recombination Graphs (ARGs) to detect gene flow.
 Research was supervised by Professor Tim Barraclough, with lots of help from Tymek Pieszko[@Barralab](https://sites.google.com/view/barralab/home)
 
 
