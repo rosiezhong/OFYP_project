@@ -110,26 +110,25 @@ This can be found in this line, after the -m flag, set as default 2.9e-9. It was
 An additional script needed to run this script is tree_type.py. This is the folder that this file is stored in. All additional scripts needed are provided in this repository. tree_type.py was provided by Tymek Pieszko
 
 ## Running simulations
-This study uses [msprime](https://tskit.dev/msprime/docs/stable/intro.html) to run simulations on Jupyter Notebook. The code used for the species Andrena is
+This study uses [msprime](https://tskit.dev/msprime/docs/stable/intro.html) to run simulations on Jupyter Notebook. The code used to generate simulations is
 ```
-%%capture
 twopopmodel = msprime.Demography()
-twopopmodel.add_population(name="A", initial_size=2356845.5)
-twopopmodel.add_population(name="B", initial_size=2356845.5)
-twopopmodel.add_population(name="C", initial_size=2356845.5)
-twopopmodel.add_population_split(time=5000_000, derived=["A", "B"], ancestral="C")
-twopopmodel.set_migration_rate(source='A', dest='B', rate=1.3e-7)
+twopopmodel.add_population(name="A", initial_size=<Ne of A>)
+twopopmodel.add_population(name="B", initial_size=<Ne of B>)
+twopopmodel.add_population(name="C", initial_size=<Ne of ancestral pop. C>)
+twopopmodel.add_population_split(time=<no. of generations>, derived=["A", "B"], ancestral="C")
+twopopmodel.set_migration_rate(source='A', dest='B', rate=<gene flow rate per generation>)
 Andrena_ts = msprime.sim_ancestry(
-    recombination_rate=6.8e-10,
-    sequence_length=1000_000,
+    recombination_rate=<recomb_rate>,
+    sequence_length=<seq_length>,
     samples={"A": 1, "B": 1},
-    demography=twopopmodel)
-Andrena_mts = msprime.sim_mutations(Andrena_ts, rate=3.4e-9)
+    demography=<name of demographic population>)
+<species>_mts = msprime.sim_mutations(<species>_ts, rate=<mutation rate>)
 ```
-The code can be reused for other species by adjusting parameter values. Simulated ancestries can then be used to generate a vcf file, as with Andrena
+The code can be reused for other species by adjusting parameter values. Simulated ancestries can then be used to generate a vcf file
 ```
 with open("/path/simulated.vcf", "w") as vcf_file:
-    Andrena_mts.write_vcf(vcf_file, allow_position_zero=True)
+    <species>_mts.write_vcf(vcf_file, allow_position_zero=True)
 ```
 A modified varation of Template.singer.slurm can then be used to run this vcf file through the gene flow analysis pipeline.
 
