@@ -111,7 +111,7 @@ This can be found in this line, after the -m flag, set as default 2.9e-9. It was
 
 > WOR_DIR=
 
-An additional script needed to run this script is tree_type.py. This is the folder that this file is stored in. All additional scripts needed are provided in this repository. tree_type.py was provided by Tymek Pieszko
+An additional script needed to run this script is tree_type.py. This is the folder that this file is stored in. tree_type.py was written by Tymek Pieszko, and is hence not included due to authorship rights. Users can replace it with their own equivalent implementation or contact the original author
 
 ### Output
 A file named <Species_name>.tree.txt will be created where you specified TREE_DIR. It is a tab delimited file containing information on the relevant trees and their relative proportions. 
