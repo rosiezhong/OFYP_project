@@ -18,5 +18,4 @@ unset y
 unset z
 unset window_size
 echo "${species}2.1 split successfully"
-# Print success message
-echo "Chr1 extracted successfully for $species"
+
